@@ -2,10 +2,19 @@
   "name": "hono",
   "type": "module",
   "dependencies": {
-    "hono": "^4.8.9"
+    "@hono/zod-openapi": "^1.1.5",
+    "@scalar/hono-api-reference": "^0.9.25",
+    "hono": "^4.8.9",
+    "zod": "^4.1.12"
+  },
+  "scripts": {
+    "dev": "tsx src/dev.ts"
   },
   "devDependencies": {
+    "@hono/node-server": "^1.19.6",
     "@types/node": "^20.11.17",
+    "dotenv": "^17.2.3",
+    "tsx": "^4.20.6",
     "typescript": "^5.8.3"
   }
 }
