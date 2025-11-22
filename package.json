@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "tsx src/dev.ts",
+    "start": "tsx src/dev.ts",
     "build": "echo 'no build step'"
   },
   "devDependencies": {
