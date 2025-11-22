@@ -8,7 +8,8 @@
     "zod": "^4.1.12"
   },
   "scripts": {
-    "dev": "tsx src/dev.ts"
+    "dev": "tsx src/dev.ts",
+    "build": "echo 'no build step'"
   },
   "devDependencies": {
     "@hono/node-server": "^1.19.6",
