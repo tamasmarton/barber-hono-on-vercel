@@ -1,16 +1,18 @@
 import { OpenAPIHono, createRoute, z } from '@hono/zod-openapi'
 import { apiReference } from '@scalar/hono-api-reference'
+import { Hono } from 'hono'
 import { barbers } from './data.js'
 import { BarberSchema } from './types.js'
 
-const app = new OpenAPIHono<{ Bindings: { API_KEY: string } }>()
+const app = new Hono()
+const api = new OpenAPIHono<{ Bindings: { API_KEY: string } }>()
 
 const welcomeStrings = [
   "Hello Hono!",
   "To learn more about Hono on Vercel, visit https://vercel.com/docs/frameworks/hono",
 ]
 
-app.use('/api/*', async (c, next) => {
+api.use('/api/*', async (c, next) => {
   const apiKey = c.req.header('x-api-key')
   const validApiKey = c.env?.API_KEY || process.env.API_KEY
 
@@ -48,11 +50,11 @@ const getBarbersRoute = createRoute({
   },
 })
 
-app.openapi(getBarbersRoute, (c) => {
+api.openapi(getBarbersRoute, (c) => {
   return c.json(barbers)
 })
 
-app.doc('/doc', {
+api.doc('/doc', {
   openapi: '3.0.0',
   info: {
     version: '1.0.0',
@@ -60,7 +62,7 @@ app.doc('/doc', {
   },
 })
 
-app.get(
+api.get(
   '/reference',
   apiReference({
     spec: {
@@ -69,10 +71,12 @@ app.get(
   } as any)
 )
 
-app.openAPIRegistry.registerComponent('securitySchemes', 'apiKey', {
+api.openAPIRegistry.registerComponent('securitySchemes', 'apiKey', {
   type: 'apiKey',
   name: 'x-api-key',
   in: 'header',
 })
+
+app.route('/', api)
 
 export default app
