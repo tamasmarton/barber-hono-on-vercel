@@ -19,7 +19,7 @@ A modern, type-safe REST API for managing barber information, built with [Hono](
 GET /api/v1/barbers
 ```
 
-Returns a list of barbers with their schedules and services.
+Returns a list of barbers with their schedules.
 
 **Authentication**: Requires `x-api-key` header
 
