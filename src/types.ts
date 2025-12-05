@@ -6,6 +6,7 @@ export const WorkHoursSchema = z.object({
 });
 
 export const BarberSchema = z.object({
+  id: z.string().uuid(),
   name: z.string(),
   workSchedule: z.object({
     monday: WorkHoursSchema.optional(),
