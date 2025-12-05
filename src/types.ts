@@ -8,13 +8,13 @@ export const WorkHoursSchema = z.object({
 export const BarberSchema = z.object({
   name: z.string(),
   workSchedule: z.object({
-    Monday: WorkHoursSchema.optional(),
-    Tuesday: WorkHoursSchema.optional(),
-    Wednesday: WorkHoursSchema.optional(),
-    Thursday: WorkHoursSchema.optional(),
-    Friday: WorkHoursSchema.optional(),
-    Saturday: WorkHoursSchema.optional(),
-    Sunday: WorkHoursSchema.optional(),
+    monday: WorkHoursSchema.optional(),
+    tuesday: WorkHoursSchema.optional(),
+    wednesday: WorkHoursSchema.optional(),
+    thursday: WorkHoursSchema.optional(),
+    friday: WorkHoursSchema.optional(),
+    saturday: WorkHoursSchema.optional(),
+    sunday: WorkHoursSchema.optional(),
   }),
 }).openapi('Barber');
 
