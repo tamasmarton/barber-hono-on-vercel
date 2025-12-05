@@ -10,8 +10,6 @@ export const barbers: Barber[] = [
       Thursday: { start: "09:00", end: "17:00" },
       Friday: { start: "09:00", end: "16:00" },
     },
-    lunchBreak: { start: "12:00", end: "12:30" },
-    services: ["Hajvágás", "Szakállvágás", "Hajmosás"]
   },
   {
     name: "Nagy Péter",
@@ -22,7 +20,5 @@ export const barbers: Barber[] = [
       Friday: { start: "10:00", end: "18:00" },
       Saturday: { start: "09:00", end: "14:00" },
     },
-    lunchBreak: { start: "13:00", end: "13:30" },
-    services: ["Hajvágás", "Borotválás", "Szakállvágás"]
   }
 ];

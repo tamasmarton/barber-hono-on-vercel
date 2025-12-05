@@ -31,9 +31,7 @@ Returns a list of barbers with their schedules and services.
     "workSchedule": {
       "Monday": { "start": "09:00", "end": "17:00" },
       ...
-    },
-    "lunchBreak": { "start": "12:00", "end": "12:30" },
-    "services": ["Hajvágás", "Szakállvágás", "Hajmosás"]
+    }
   }
 ]
 ```

@@ -16,11 +16,6 @@ export const BarberSchema = z.object({
     Saturday: WorkHoursSchema.optional(),
     Sunday: WorkHoursSchema.optional(),
   }),
-  lunchBreak: z.object({
-    start: z.string(),
-    end: z.string(),
-  }).optional(),
-  services: z.array(z.enum(['Hajvágás', 'Szakállvágás', 'Hajmosás', 'Borotválás'])),
 }).openapi('Barber');
 
 export type Barber = z.infer<typeof BarberSchema>;
