@@ -68,6 +68,29 @@ api.get(
     spec: {
       url: '/doc',
     },
+    // Theme and appearance
+    theme: 'kepler',
+    darkMode: true,
+    layout: 'modern',
+
+    // UI customization
+    defaultOpenAllTags: false,
+    hideModels: false,
+    hideSearch: false,
+    hideDarkModeToggle: false,
+
+    // Code examples
+    defaultHttpClient: {
+      targetKey: 'shell',
+      clientKey: 'curl',
+    },
+
+    // Page metadata
+    pageTitle: 'Barber API Reference',
+    metaData: {
+      title: 'Barber API Reference',
+      description: 'API documentation for the Barber scheduling system',
+    },
   } as any)
 )
 
